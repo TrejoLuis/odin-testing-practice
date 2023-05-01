@@ -9,21 +9,25 @@ const calculator = (() => {
     if(more.length > 0 || typeof x == 'undefined' || typeof y == 'undefined') throw new Error(errorMsgValQuan)
     if(typeof x !== 'number' || typeof y !== 'number'
       || Number.isNaN(x) || Number.isNaN(y)) throw new Error(errorMsgValNotNumber)
+    return x + y
   }
   const subtract = (x, y, ...more) => {
     if(more.length > 0 || typeof x == 'undefined' || typeof y == 'undefined') throw new Error(errorMsgValQuan)
     if(typeof x !== 'number' || typeof y !== 'number'
       || Number.isNaN(x) || Number.isNaN(y)) throw new Error(errorMsgValNotNumber)
+    return x - y
   }
   const divide = (x, y, ...more) => {
     if(more.length > 0 || typeof x == 'undefined' || typeof y == 'undefined') throw new Error(errorMsgValQuan)
     if(typeof x !== 'number' || typeof y !== 'number'
       || Number.isNaN(x) || Number.isNaN(y)) throw new Error(errorMsgValNotNumber)
+    return x / y
   }
   const multiply = (x, y, ...more) => {
     if(more.length > 0 || typeof x == 'undefined' || typeof y == 'undefined') throw new Error(errorMsgValQuan)
     if(typeof x !== 'number' || typeof y !== 'number'
       || Number.isNaN(x) || Number.isNaN(y)) throw new Error(errorMsgValNotNumber)
+    return x * y
   }
   
   return{
