@@ -45,6 +45,17 @@ test('should throw if some value provided is NaN', ()=> {
   expect(() => calculator.multiply(12, 0/0)).toThrow(error)
 })
 
+test('should return the respective operation', () => {
+  expect(calculator.add(3,6)).toBe(9)
+  expect(calculator.subtract(3,6)).toBe(-3)
+  expect(calculator.divide(3,6)).toBe(0.5)
+  expect(calculator.multiply(3,6)).toBe(18)
+  expect(calculator.add(0.1, 0.2)).toBeCloseTo(0.3)
+  expect(calculator.subtract(0.3, 0.1)).toBeCloseTo(0.2)
+  expect(calculator.divide(0.1, 0.3)).toBeCloseTo(0.333)
+  expect(calculator.multiply(0.3, 0.2)).toBe(0.06)
+})
+
 
 //Redundant
 // test('should throw if there is no value provided', () => {
