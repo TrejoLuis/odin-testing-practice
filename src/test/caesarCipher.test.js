@@ -19,5 +19,19 @@ describe('CaesarCipher', () => {
     expect(() => caesarCipher('foo', 'bar')).toThrow(error)
   })
 
+  test('should return a cipher message', () => {
+    expect(caesarCipher('foo', 1)).toBe('gpp')
+    expect(caesarCipher('foo, bar', 1)).toBe('gpp, cbs')
+    expect(caesarCipher('Hello World', 1)).toBe('ifmmp xpsme')
+  })
+  test('shift can be negative', () => {
+    expect(caesarCipher('foo', -1)).toBe('enn')
+    expect(caesarCipher('hello world', -1)).toBe('gdkkn vnqkc')
+  })
+  test('if the shift overlaps the alphabet index, then must roll over', () => {
+    expect(caesarCipher('foo, bar, baz', 1)).toBe('gpp, cbs, cba')
+    expect(caesarCipher('foo, bar, baz', -1)).toBe('enn, azq, azy')
+    expect(caesarCipher('foo, bar, baz', 5)).toBe('ktt, gfw, gfe')
+  })
 
 })
